@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d18" />
+  <title>Vibe Player | Music for your mood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Vibe Player home"><span class="brand-mark">♫</span><span>vibe<span class="brand-light">player</span></span></a>
+      <p class="side-label">MENU</p>
+      <a class="nav-link active" href="#"><span>◫</span> Discover</a>
+      <a class="nav-link" href="#library"><span>▤</span> Your library</a>
+      <div class="sidebar-note">
+        <div class="note-icon">✦</div>
+        <p class="note-title">Your sound, your space.</p>
+        <p class="note-copy">Add your favourite audio files and make this player yours.</p>
+      </div>
+      <p class="side-footer">MADE FOR MUSIC LOVERS</p>
+    </aside>
+
+    <section class="main-content">
+      <header class="topbar">
+        <div><p class="eyebrow">WELCOME TO YOUR SOUNDSPACE</p><h1>Feel the <span>vibe.</span></h1></div>
+        <label class="upload-button" for="fileInput"><span>＋</span> Add music</label>
+        <input id="fileInput" type="file" accept="audio/*" multiple hidden />
+      </header>
+
+      <section class="feature-card">
+        <div class="feature-copy">
+          <p class="eyebrow">YOUR PERSONAL MUSIC PLAYER</p>
+          <h2>Every moment<br>has a <em>soundtrack.</em></h2>
+          <p class="feature-description">Bring your music into one beautiful space. Upload audio, build a playlist and press play.</p>
+          <button class="primary-button" id="exploreButton">Explore your library <span>→</span></button>
+        </div>
+        <div class="feature-art" aria-hidden="true">
+          <div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div>
+          <div class="art-disc"><div class="disc-center">♫</div></div>
+          <div class="floating-chip chip-top">NOW PLAYING</div>
+          <div class="floating-chip chip-bottom"><span class="equalizer"><i></i><i></i><i></i><i></i></span> GOOD VIBRATIONS</div>
+        </div>
+      </section>
+
+      <section class="player-layout" id="library">
+        <div class="now-playing panel">
+          <div class="section-heading"><div><p class="eyebrow">LISTENING NOW</p><h3>Now playing</h3></div><span class="live-dot">● LIVE</span></div>
+          <div class="cover-wrap" id="coverWrap"><div class="cover-placeholder"><span>♫</span><small>YOUR MUSIC</small></div></div>
+          <div class="track-meta"><div><h2 id="trackTitle">Choose a track</h2><p id="trackArtist">Your playlist is waiting</p></div><button class="icon-button heart-button" id="likeButton" aria-label="Like track">♡</button></div>
+          <div class="progress-area">
+            <input id="progressBar" class="range progress" type="range" min="0" max="100" value="0" aria-label="Song progress" />
+            <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+          </div>
+          <div class="controls">
+            <button class="icon-button small" id="shuffleButton" aria-label="Shuffle" title="Shuffle">⤨</button>
+            <button class="icon-button" id="previousButton" aria-label="Previous track" title="Previous">|◀</button>
+            <button class="play-button" id="playButton" aria-label="Play">▶</button>
+            <button class="icon-button" id="nextButton" aria-label="Next track" title="Next">▶|</button>
+            <button class="icon-button small" id="repeatButton" aria-label="Repeat" title="Repeat">↻</button>
+          </div>
+          <div class="volume-row"><span>◖</span><input id="volumeBar" class="range volume" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Volume" /><span id="volumeValue">75%</span></div>
+        </div>
+
+        <div class="playlist panel">
+          <div class="section-heading playlist-heading"><div><p class="eyebrow">UP NEXT</p><h3>Your playlist</h3></div><span class="track-count" id="trackCount">0 TRACKS</span></div>
+          <div class="empty-state" id="emptyState"><div class="empty-icon">♫</div><h4>Your playlist is empty</h4><p>Tap <b>Add music</b> to choose audio files from your device.</p><label class="secondary-button" for="fileInput">＋ Choose audio files</label></div>
+          <ul class="track-list" id="trackList"></ul>
+          <div class="playlist-bottom"><span>TIP</span> You can add multiple audio files at once.</div>
+        </div>
+      </section>
+      <footer>VIBE PLAYER <span>•</span> BUILT WITH HTML, CSS & JAVASCRIPT</footer>
+    </section>
+  </main>
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
